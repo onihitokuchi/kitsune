@@ -1,3 +1,6 @@
+eval $(ssh-agent) >/dev/null 2>&1
+ssh-add "$HOME/.ssh/id_rsa" >/dev/null 2>&1
+
 alias ls='eza -al --color=always --group-directories-first'
 alias la='eza -a --color=always --group-directories-first'
 alias ll='eza -l --color=always --group-directories-first'
