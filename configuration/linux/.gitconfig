@@ -1,9 +1,12 @@
 [core]
 editor = code --wait
+
 [user]
-name = Santos Vilanculos
-email = santosvilanculos@yahoo.com
+name = "<name>"
+email = "<email>"
+
 [init]
 defaultBranch = main
+
 [credential "helperselector"]
 selected = manager-core
