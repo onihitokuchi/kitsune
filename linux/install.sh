@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 DIRNAME=$(dirname $(realpath "$0"))
 
@@ -35,22 +35,24 @@ sudo apt-get install -y curl wget
 sudo apt-get install -y zip unzip
 sudo apt-get install -y git gh
 sudo apt-get install -y ffmpeg vlc
-sudo apt-get install -y xsel
+sudo apt-get install -y maim xsel xclip
+sudo apt-get install -y libnss3-tools jq openssl ca-certificates
+
+sudo apt-get install -y zsh
+sudo chsh -s $(which zsh)
 
 sudo apt install -y flatpak
 sudo apt install -y gnome-software-plugin-flatpak
 sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
 
-cd '/tmp'
+sudo flatpak install flathub it.mijorus.gearlever
 
-wget "https://github.com/fastfetch-cli/fastfetch/releases/download/2.21.0/fastfetch-linux-amd64.deb" -O "fastfetch-linux-amd64.deb"
-sudo dpkg -i "fastfetch-linux-amd64.deb"
+wget "https://github.com/fastfetch-cli/fastfetch/releases/download/2.21.0/fastfetch-linux-amd64.deb" -O "$DIRNAME/fastfetch-linux-amd64.deb"
+sudo dpkg -i "$DIRNAME/fastfetch-linux-amd64.deb"
 
-wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O "google-chrome-stable_current_amd64.deb"
-sudo dpkg -i "google-chrome-stable_current_amd64.deb"
+#wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O "$DIRNAME/google-chrome-stable_current_amd64.deb"
+#sudo dpkg -i "$DIRNAME/google-chrome-stable_current_amd64.deb"
 xdg-settings set default-web-browser google-chrome.desktop
 
-cd -
-
-sudo apt-get install -y zsh
-sudo chsh -s $(which zsh)
+# https://extensions.gnome.org/extension/307/dash-to-dock/
+# flatpak install flathub io.github.zen_browser.zen
