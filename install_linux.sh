@@ -70,6 +70,22 @@ sudo flatpak install -y flathub it.mijorus.gearlever
 wget "https://github.com/fastfetch-cli/fastfetch/releases/download/2.27.1/fastfetch-linux-amd64.deb" -O "$DIRNAME/tmp/fastfetch-linux-amd64.deb"
 sudo dpkg -i "$DIRNAME/tmp/fastfetch-linux-amd64.deb"
 
-# https://extensions.gnome.org/extension/307/dash-to-dock/
+# PyEnv
+sudo apt-get install -y libffi-dev
+sudo apt-get install -y libreadline-dev
+sudo apt-get install -y libssl-dev
+sudo apt-get install -y zlib1g-dev
+sudo apt-get install -y tk-dev
+sudo apt-get install -y libbz2-dev
+sudo apt-get install -y liblzma-dev
+sudo apt-get install -y libsqlite3-dev
+curl https://pyenv.run | bash
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+pyenv install 3.13
+pyenv global 3.13
 
-mkdir -p $HOME/Software_Engineering/{bash,php,python}
+mkdir -p $HOME/Source_Code
+
+# https://extensions.gnome.org/extension/307/dash-to-dock/
