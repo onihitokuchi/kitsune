@@ -1,7 +1,9 @@
 {
+    "workbench.settings.editor": "json",
     "workbench.startupEditor": "none",
     "telemetry.telemetryLevel": "off",
     // graphical_user_interface
+    "editor.hover.delay": 256,
     "workbench.activityBar.location": "hidden",
     "window.menuBarVisibility": "toggle",
     "window.commandCenter": false,
@@ -9,16 +11,16 @@
     "editor.scrollBeyondLastLine": false,
     "workbench.sideBar.location": "right",
     "explorer.compactFolders": false,
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.colorTheme": "Rosé Pine Moon",
     "workbench.iconTheme": "material-icon-theme",
     "breadcrumbs.enabled": false,
     "editor.stickyScroll.enabled": false,
     "editor.minimap.enabled": false,
-    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontFamily": "MonoLisa",
     "editor.fontSize": 14,
     "editor.fontLigatures": true,
-    "editor.lineHeight": 24,
-    "terminal.integrated.fontFamily": "'JetBrainsMonoNL Nerd Font'",
+    "editor.lineHeight": 28,
+    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
     //
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "terminal.integrated.defaultProfile.linux": "zsh",
@@ -30,8 +32,6 @@
     //
     "editor.codeActionsOnSave": {
         "source.fixAll": "always",
-        "source.fixAll.pylance": "always",
-        "source.unusedImports": "always",
         "source.sortImports": "always",
         "source.organizeImports": "always",
     },
@@ -70,7 +70,7 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[php]": {
-        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+        "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
     },
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
@@ -82,6 +82,7 @@
     "javascript.suggest.paths": false,
     // dotenv.dotenv-vscode
     "files.associations": {
+        "*.embeddedhtml": "html",
         ".env*": "dotenv"
     },
     "editor.tokenColorCustomizations": {
@@ -102,8 +103,10 @@
     "cSpell.useGitignore": false,
     "dotenv.enableAutocloaking": false,
     "python.analysis.fixAll": [
-        "source.convertImportFormat",
-        "source.unusedImports"
+        "source.convertImportFormat"
     ],
-    "blade.format.enable": true
+    "blade.format.enable": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "phpactor.path": "/usr/local/bin/phpactor",
+    "laravel-pint.enable": true,
 }
