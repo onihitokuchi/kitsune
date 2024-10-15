@@ -2,6 +2,7 @@
 
 WORKDIR=$(dirname $(realpath "$0"))
 
+# ---
 sudo apt-get purge -y ace-of-penguins
 sudo apt-get purge -y aisleriot
 sudo apt-get purge -y five-or-more
@@ -33,13 +34,16 @@ sudo apt-get autoclean -y
 sudo apt-get clean -y
 sudo service packagekit restart
 
+# ---
 sudo apt-get update
 sudo apt-get upgrade -y
 
+# ---
 sudo dpkg --add-architecture i386
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 
+# ---
 sudo apt-get install -y software-properties-common
 sudo apt-get install -y gpg
 sudo apt-get install -y build-essential
