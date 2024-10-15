@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DIRNAME=$(dirname $(realpath "$0"))
+WORKDIR=$(dirname $(realpath "$0"))
 
 sudo apt-get purge -y ace-of-penguins
 sudo apt-get purge -y aisleriot
@@ -58,19 +58,23 @@ sudo apt-get install -y jq
 sudo apt-get install -y openssl
 sudo apt-get install -y ca-certificates
 
+# ---
 sudo apt-get install -y zsh
 sudo chsh -s $(which zsh)
 
+# ---
 sudo apt install -y flatpak
 sudo apt install -y gnome-software-plugin-flatpak
 sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
 
+# ---
 sudo flatpak install -y flathub it.mijorus.gearlever
 
-wget "https://github.com/fastfetch-cli/fastfetch/releases/download/2.27.1/fastfetch-linux-amd64.deb" -O "$DIRNAME/tmp/fastfetch-linux-amd64.deb"
-sudo dpkg -i "$DIRNAME/tmp/fastfetch-linux-amd64.deb"
+# ---
+wget "https://github.com/fastfetch-cli/fastfetch/releases/download/2.27.1/fastfetch-linux-amd64.deb" -O "$WORKDIR/tmp/fastfetch-linux-amd64.deb"
+sudo dpkg -i "$WORKDIR/tmp/fastfetch-linux-amd64.deb"
 
-# PyEnv
+# ---
 sudo apt-get install -y libffi-dev
 sudo apt-get install -y libreadline-dev
 sudo apt-get install -y libssl-dev
@@ -83,9 +87,8 @@ curl https://pyenv.run | bash
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-pyenv install 3.13
-pyenv global 3.13
+pyenv install 3.12
+pyenv global 3.12
 
+# ---
 mkdir -p $HOME/Source_Code
-
-# https://extensions.gnome.org/extension/307/dash-to-dock/
