@@ -156,3 +156,11 @@ alias push='git push origin'
 alias stat='git status' # 'status' is protected name so using 'stat' instead
 alias tag='git tag'
 alias newtag='git tag -a'
+
+#yt-dlp
+alias video='yt-dlp -S vcodec:h264,res,acodec:m4a'
+alias audio='yt-dlp -f bestaudio --extract-audio --audio-format mp3'
+
+#laravel
+alias tinker='php artisan tinker'
+alias pint='./vendor/bin/pint'

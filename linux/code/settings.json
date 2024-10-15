@@ -105,5 +105,5 @@
         "source.convertImportFormat",
         "source.unusedImports"
     ],
-    "blade.format.enable": true,
+    "blade.format.enable": true
 }
